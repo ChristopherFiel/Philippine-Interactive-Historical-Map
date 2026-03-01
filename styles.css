@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: #fdf6e3;
+  overflow: hidden;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  background: #aadaff;
+  order: 1;
+}
+
+.sidebar {
+  width: 380px;
+  padding: 20px;
+  background: white;
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  order: 2;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.4rem;
+  color: #5d4037;
+  border-bottom: 2px solid #d3bc8d;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#instruction {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.legend-container {
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.legend-item:hover {
+  border-color: #d3bc8d;
+  background: #fffcf5;
+  transform: translateX(-3px);
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.text-group strong {
+  display: block;
+  font-size: 0.9rem;
+}
+.text-group small {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* THE INFO PANEL */
+#dynamic-info-panel {
+  display: none;
+  margin-top: 10px;
+  padding: 15px;
+  background: #fffaf0;
+  border-radius: 10px;
+  border: 1px solid #d3bc8d;
+  animation: fadeInRight 0.3s ease-out;
+}
+
+#dynamic-info-panel h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #5d4037;
+}
+#dynamic-info-panel p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #444;
+  margin: 5px 0;
+}
+
+.visual-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
+.visual-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.source {
+  font-size: 0.7rem;
+  color: #999;
+  font-style: italic;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Eras Colors */
+.bg-human {
+  background: #e63946;
+}
+.bg-austro {
+  background: #457b9d;
+}
+.bg-trade {
+  background: #f1c40f;
+}
+.bg-indic {
+  background: #9b59b6;
+}
+.bg-islam {
+  background: #2ecc71;
+}
+.bg-china {
+  background: #34495e;
+}

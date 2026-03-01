@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precolonial Philippines Historical Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div class="sidebar">
+      <h1>Historical Eras</h1>
+      <p id="instruction">
+        <small>Hover around the map or legend to view the description</small>
+      </p>
+
+      <div class="legend-container">
+        <div class="legend-item" data-category="human">
+          <span class="dot bg-human"></span>
+          <div class="text-group">
+            <strong>Early Human Settlements</strong
+            ><small>67,000 BP – 10,000 BP</small>
+          </div>
+        </div>
+        <div class="legend-item" data-category="austro">
+          <span class="dot bg-austro"></span>
+          <div class="text-group">
+            <strong>Austronesian Migration Route</strong
+            ><small>2,500 BCE – 1,500 BCE</small>
+          </div>
+        </div>
+        <div class="legend-item" data-category="trade">
+          <span class="dot bg-trade"></span>
+          <div class="text-group">
+            <strong>Precolonial Trade Port</strong><small>900 CE – 1500 CE</small>
+          </div>
+        </div>
+        <div class="legend-item" data-category="indic">
+          <span class="dot bg-indic"></span>
+          <div class="text-group">
+            <strong>Indic Culture Influence</strong
+            ><small>900 CE – 1400 CE</small>
+          </div>
+        </div>
+        <div class="legend-item" data-category="islam">
+          <span class="dot bg-islam"></span>
+          <div class="text-group">
+            <strong>Early Islamic Center</strong><small>1300 CE – 1565 CE</small>
+          </div>
+        </div>
+        <div class="legend-item" data-category="china">
+          <span class="dot bg-china"></span>
+          <div class="text-group">
+            <strong>Chinese Trade Relations</strong><small>900 CE – 1400 CE</small>
+          </div>
+        </div>
+      </div>
+
+      <div id="dynamic-info-panel">
+        <h3 id="info-title">Era Title</h3>
+        <p><strong>Description:</strong> <span id="info-desc"></span></p>
+        <p><strong>Significance:</strong> <span id="info-sig"></span></p>
+        <div class="visual-container" id="info-visual"></div>
+        <div class="source">Source: <span id="info-source"></span></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
