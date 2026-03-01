@@ -34,8 +34,8 @@ const legendData = {
     title: "Early Human Settlements",
     desc: "The Philippines possesses a deep human history stretching back hundreds of thousands of years. Groundbreaking discoveries in sites like Rizal, Kalinga have unearthed stone tools and butchered rhinoceros bones dating back 709,000 years. Furthermore, Callao Cave in Cagayan yielded the remains of Homo luzonensis, a unique hominin species that lived at least 67,000 years ago.",
     sig: "These findings prove that ancient hominins successfully reached the archipelago via seafaring or land bridges long before anatomically modern humans arrived.",
-    visual: "",
-    source: "Ono et al., 2024; Ingicco et al. (2018)",
+    visual: `<img src="images/early-settlement.png">`,
+    source: "Pawlik, A., & Fuentes, R. (2023). Prehistoric hunter-gatherers in the Philippines—Subsistence strategies, adaptation, and behaviour in maritime environments",
   },
   austro: {
     title: "Austronesian Migration Route",
@@ -89,8 +89,7 @@ function showInfoPanel(cat) {
   document.getElementById("info-title").innerText = data.title;
   document.getElementById("info-desc").innerText = data.desc;
   document.getElementById("info-sig").innerText = data.sig;
-  document.getElementById("info-visual").innerHTML =
-    `<strong>Visual Reference:</strong><br>${data.visual}`;
+  document.getElementById("info-visual").innerHTML = data.visual;
   document.getElementById("info-source").innerText = data.source;
   document.getElementById("dynamic-info-panel").style.display = "block";
 }
