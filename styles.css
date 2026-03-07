@@ -1,3 +1,7 @@
+/* General Setup */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   display: flex;
@@ -7,6 +11,7 @@ body {
   overflow: hidden;
 }
 
+/* Map Setup */
 #map {
   flex: 1;
   height: 100%;
@@ -14,6 +19,7 @@ body {
   order: 1;
 }
 
+/* SIDEBAR DEFAULT (DESKTOP) */
 .sidebar {
   width: 380px;
   padding: 20px;
@@ -24,10 +30,12 @@ body {
   flex-direction: column;
   overflow-y: auto;
   order: 2;
-  margin-top: 0;
-  line-height: 1.2;
 }
 
+/* Typography & Spacing */
+header {
+  margin-bottom: 10px;
+}
 h1 {
   font-size: 1.4rem;
   color: #5d4037;
@@ -37,18 +45,17 @@ h1 {
   margin-top: 0;
   text-align: center;
 }
-
-#instruction {
+.sidebar p {
   text-align: center;
   margin-top: 0;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 
+/* Legend Setup */
 .legend-container {
   margin-bottom: 20px;
 }
-
 .legend-item {
   padding: 10px;
   margin-bottom: 8px;
@@ -60,13 +67,11 @@ h1 {
   align-items: center;
   background: #fff;
 }
-
 .legend-item:hover {
   border-color: #d3bc8d;
   background: #fffcf5;
   transform: translateX(-3px);
 }
-
 .dot {
   height: 12px;
   width: 12px;
@@ -83,7 +88,7 @@ h1 {
   color: #888;
 }
 
-/* THE INFO PANEL */
+/* Info Panel */
 #dynamic-info-panel {
   display: none;
   margin-top: 10px;
@@ -93,7 +98,6 @@ h1 {
   border: 1px solid #d3bc8d;
   animation: fadeInRight 0.3s ease-out;
 }
-
 #dynamic-info-panel h3 {
   margin: 0 0 8px 0;
   font-size: 1.1rem;
@@ -106,16 +110,11 @@ h1 {
   margin: 5px 0;
 }
 
-#dynamic-info-panel img {
-  width: 300px;
-  height: auto;
-}
-
 .visual-container {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  padding: 15px;
+  padding: 10px;
   margin: 10px 0;
   text-align: center;
   font-size: 0.8rem;
@@ -125,6 +124,7 @@ h1 {
   width: 100%;
   height: auto;
   border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .source {
@@ -165,4 +165,68 @@ h1 {
 }
 .bg-china {
   background: #34495e;
+}
+
+/* =========================================================
+           MOBILE RESPONSIVE RULES
+           Triggers when the screen is 768px wide or smaller
+           ========================================================= */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column; /* Stacks vertically instead of side-by-side */
+  }
+
+  #map {
+    flex: 1.2; /* Map takes up slightly more than half the screen */
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar takes full width */
+    flex: 1; /* Sidebar takes the remaining height */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Shadow goes UP instead of LEFT */
+    padding: 15px;
+  }
+
+  /* Make the legend 2 columns on mobile so it doesn't take up the whole screen */
+  .legend-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .legend-item {
+    margin-bottom: 0;
+    padding: 8px;
+  }
+  .legend-item:hover {
+    transform: translateY(-2px); /* Push up instead of left on hover */
+  }
+
+  .text-group strong {
+    font-size: 0.8rem;
+  }
+  .text-group small {
+    font-size: 0.65rem;
+  }
+
+  /* Adjust animation for mobile */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+  .legend-container {
+    grid-template-columns: 1fr; /* Revert to 1 column for very small screens */
+  }
 }
